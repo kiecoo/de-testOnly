@@ -1,4 +1,4 @@
-//////
+///////////////
 <!doctype html>	
 	<html>
 	  <head>
@@ -203,7 +203,11 @@
 	}
 	 
 	profile(done)
-        function done (el) { document.body.appendChild(el) }
+        function done  (x_userprofiles) {
+        x_userprofiles.forEach(function (y) {
+	   document.body.appendChild(y)
+	    })
+    }
 	   
 	   
 	   
