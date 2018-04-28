@@ -1,4 +1,3 @@
-	 
 // index.js
     module.exports = getGithubData
   
