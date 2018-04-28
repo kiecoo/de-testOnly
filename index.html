@@ -1,4 +1,4 @@
-//use done(el) instead of return el
+//use done(el) instead of return el--rename---x_done
 <!doctype html>	
 	<html>
 	  <head>
@@ -127,7 +127,7 @@
 	    padding:.1px;
 	  }
 	`
-	function profile (done) {
+	function profile (x_done) {
 	   getGithubData (next)
            function next (data) {
 		    //var element1 = bel`<div>${data.map(x => bel`<p>${x.user}</p>`)}</div>`
@@ -190,7 +190,7 @@
 				    el.appendChild(cardContainer)
 				  }
 		   
-		    done(el)
+		    x_done(el)
             }
 		
 
