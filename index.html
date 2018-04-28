@@ -1,3 +1,7 @@
+
+
+
+
 //use done(el) instead of return el--rename---y_next
 <!doctype html>	
 	<html>
@@ -127,9 +131,9 @@
 	    padding:.1px;
 	  }
 	`
-	function profile (x_done) {
+	function profile (fx_done) {
 	   getGithubData (next)
-           function next (data) {
+           function next (x_data) {
 		    //var element1 = bel`<div>${data.map(x => bel`<p>${x.user}</p>`)}</div>`
 		    //done(element1)
 		   
@@ -139,9 +143,8 @@
 			    </div>
 			  `
 		   
-			  var ninasProfile      = data[0]
+			  var ninasProfile      = x_data[0]
 			  var username          = ninasProfile.username
-
 			  var name              = 'Nina'
 			  var cardText          = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostru '
 			  var imageUrl          = 'https://nomadlist.com/assets/img/cities/phuket-thailand-500px.jpg'
@@ -149,11 +152,9 @@
 			  var twitter           = `https://twitter.com/${username}`
 			  var github            = `https://github.com/${username}`
 			  var codepen           = `https://codepen.io/${username}`
-
 			  function makeLinkUrl (username) {
 			    return  `https://gitter.im/${username}/~embed`
 			  }
-
 			 // HTML
 			  var cardContainer = bel`
 			    <div class=${css.cardContainer}>
@@ -166,7 +167,6 @@
 			   var cardContainer_hover = bel`
 				    <div class=${css.cardContainer_hover}>
 				      <div class=${css.cardGitterChat} ><iframe class=${css.iframe} src=${ makeLinkUrl (username)}></iframe></div>
-
 				      <div class=${css.cardSocial}>
 					<a href=${twitter} target='_blank'>
 					  <i class="${css.cardSocial_fontawesome} fa fa-twitter" aria-hidden="true"></i></a>
@@ -180,7 +180,6 @@
 				      <div class=${css.cardText}>${cardText}</div>
 				    </div>
 				  `
-
 				  function hoverCard (event) {
 				    el.appendChild(cardContainer_hover)
 				    el.removeChild(cardContainer)
@@ -190,12 +189,10 @@
 				    el.appendChild(cardContainer)
 				  }
 		   
-		    x_done(el)
+		    fx_done(el)
             }
 		
-
-
-	    function getGithubData (y_next) {
+	    function getGithubData (fy_next) {
 		    var data1= [
 		    {
 			"repo": "nicco88/personal-portfolio",
@@ -209,7 +206,7 @@
 			"username": "serapath",
 			"time": "2018-03-27T04:51:07Z"
 		    }]
-		    y_next(data1)
+		    fy_next(data1)
 	  }
 	  
 	  
@@ -227,7 +224,6 @@
 	 
 	profile(done)
         function done (el) { document.body.appendChild(el) }
-
 	   
 	   
 	   
